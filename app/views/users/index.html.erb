@@ -1,0 +1,10 @@
+<div style="float:right;">
+  <%= form_tag('/users', {:method => :get}) do %>
+    <%=label_tag :username %>
+    <%= select_tag :username, options_from_collection_for_select(@users, "username", "username", params[:username]), prompt: "Select username...", onchange: "this.form.submit();" %>
+  <% end %>
+</div>
+
+<p>&nbsp</p>
+
+<div id="user_calendar" style="width:100%; height:100%"></div>
