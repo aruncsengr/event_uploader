@@ -13,6 +13,12 @@ An online portal to upload events for users and keep track of it via full calend
 - Add a simple UI which shows events for a given date range.
 - Add a simple UI which shows availability of a particular user for a given date range.
 
+### Assumptions
+- No double booking (i.e, considering user's timeslot as busy only if the RSVP is 'yes')
+
+> Note: To achieve optimization, I've used postgresql COPY command and bulk_insert approach to upload data from CSV files. So, I've taken care of validations as DB constraints and custom validations in importers (PORO) itself.
+
+
 ## Installation
 
 Install the dependencies and devDependencies and start the server.
@@ -35,7 +41,12 @@ rails import:all
 rails db:reset
 ```
 
-### Assumptions
-- No double booking (i.e, considering user's timeslot as busy only if the RSVP is 'yes')
+## Output
 
-> Note: To achieve optimization, I've used postgresql COPY command and bulk_insert approach to upload data from CSV files. So, I've taken care of validations as DB constraints and custom validations in importers (PORO) itself.
+### Event calendar view:
+
+![event_calendar](https://github.com/aruncsengr/event_uploader/blob/main/app/assets/images/events_calendar.png)
+
+### User calendar view:
+
+![user_calendar](https://github.com/aruncsengr/event_uploader/blob/main/app/assets/images/user_calendar.png)
