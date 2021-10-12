@@ -26,6 +26,8 @@ Install the dependencies and devDependencies and start the server.
 ```sh
 cd event_uploader
 bundle install
+bundle exec rails webpacker:install
+rails db:create
 rails db:migrate
 rails s
 ```
@@ -42,10 +44,12 @@ rails db:reset
 ```
 
 ## Output
+### Event calendar view (month):
+![events_calendar_month_view](https://github.com/aruncsengr/event_uploader/blob/main/app/assets/images/events_calendar_month_view.png)
 
-### Event calendar view:
+### Event calendar view (week):
 
-![event_calendar](https://github.com/aruncsengr/event_uploader/blob/main/app/assets/images/events_calendar.png)
+![events_calendar_week_view](https://github.com/aruncsengr/event_uploader/blob/main/app/assets/images/events_calendar_week_view.png)
 
 ### User calendar view:
 
